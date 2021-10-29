@@ -2,6 +2,9 @@ variable "os" {
   type = string
   default = "ami-02e136e904f3da870"
 }
+variable "reg"{
+  default="us-east-1"
+}
 
 variable "hw" {
 default = "t2.nano"
@@ -12,6 +15,7 @@ default = "ed-20Sep"
 }
 
 resource "aws_instance" "bindu" {
+  region=var.reg
   ami = var.os
   instance_type = var.hw
     key_name = var.key
