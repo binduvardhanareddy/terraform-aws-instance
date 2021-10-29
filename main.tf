@@ -14,6 +14,7 @@ default = "ed-20Sep"
 resource "aws_instance" "bindu" {
   ami = var.os
   instance_type = var.hw
+  region="us-east-1"
   key_name = var.key
   tags = {
     Name = "Bindu-v1"
